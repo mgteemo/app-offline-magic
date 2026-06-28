@@ -7,9 +7,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Disable nitro/server bundling — we want a pure static SPA we can package
+  // into Capacitor (Android/iOS) and run fully offline from file://.
+  nitro: false,
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+    spa: { enabled: true },
   },
 });
