@@ -7,10 +7,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Disable nitro/server bundling — we want a pure static SPA we can package
+  // into Capacitor (Android/iOS) and run fully offline from file://.
+  nitro: false,
   tanstackStart: {
-    // SPA mode: emit a single static index.html shell that hydrates on the client.
-    // Used to package the app into Capacitor (Android/iOS) and run fully offline
-    // from file:// — no Node server, no localhost.
     spa: { enabled: true },
   },
 });
