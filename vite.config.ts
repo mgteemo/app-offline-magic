@@ -8,12 +8,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // Build a fully static SPA so the app can be packaged into Capacitor (Android/iOS)
-    // and run offline from file:// without any Node server. No custom server entry
-    // is needed in SPA mode — nothing runs on a server in production.
+    // SPA mode: emit a single static index.html shell that hydrates on the client.
+    // Used to package the app into Capacitor (Android/iOS) and run fully offline
+    // from file:// — no Node server, no localhost.
     spa: { enabled: true },
-    pages: [
-      { path: "/", prerender: { enabled: true, crawlLinks: true } },
-    ],
   },
 });
