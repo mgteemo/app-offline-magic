@@ -12,7 +12,7 @@ import type { CapacitorConfig } from "@capacitor/cli";
 const config: CapacitorConfig = {
   appId: "app.lovable.myanmarfontstudio",
   appName: "Myanmar Font Studio",
-  webDir: ".output/public",
+  webDir: "dist/client",
 };
 
 export default config;
